@@ -27,6 +27,25 @@ int main(void)
 	__HAL_SPI_SET_CS_LOW(&hspi);
 	LCD_Init();//LCD初始化
 
+
+	
+	while(1)
+	{
+		for(int i=0;i<40;i++)
+		{
+			Draw_Circle(64,40,i,LGRAY);
+			Draw_Circle(64,120,i,BLUE);
+			HAL_Delay(10);
+		}
+		for(int i=40;i>0;i--)
+		{
+			Draw_Circle(64,40,i,WHITE);
+			Draw_Circle(64,120,i,WHITE);
+			HAL_Delay(10);
+		}
+		
+	}
+
 	while(1)
 	{
 		uint32_t start = HAL_GetTick();

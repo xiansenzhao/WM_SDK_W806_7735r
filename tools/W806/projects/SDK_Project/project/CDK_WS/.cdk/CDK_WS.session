@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\tools\W806\projects\SDK_Project\project\CDK_WS\CDK_WS.cdkws">
+  <int Value="3" Name="m_selectedTab"/>
+  <wxString Value="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\tools\W806\projects\SDK_Project\project\CDK_WS\CDK_WS.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\app\src\main.c" Name="FileName"/>
+      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="32" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\app\src\tft7735r.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="12" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\app\src\lcd_init.c" Name="FileName"/>
+      <int Value="184" Name="FirstVisibleLine"/>
+      <int Value="214" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="104:3"/>
+        <wxString Value="114:3"/>
+        <wxString Value="124:3"/>
+        <wxString Value="214:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\PROJECT_SDK\WM_SDK_W806_v0.6.0\WM_SDK_W806_7735r\app\inc\lcd_init.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="9" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="12:3"/>
+        <wxString Value="15:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

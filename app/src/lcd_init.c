@@ -118,8 +118,8 @@ void LCD_Address_Set(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
 		LCD_WR_DATA(x1);
 		LCD_WR_DATA(x2);
 		LCD_WR_REG(0x2b);//行地址设置
-		LCD_WR_DATA(y1+32);
-		LCD_WR_DATA(y2+32);
+		LCD_WR_DATA(y1);
+		LCD_WR_DATA(y2);
 		LCD_WR_REG(0x2c);//储存器写
 	}
 	else if(USE_HORIZONTAL==2)    
@@ -135,8 +135,8 @@ void LCD_Address_Set(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
 	else                             //测试对了
 	{
 		LCD_WR_REG(0x2a);//列地址设置
-		LCD_WR_DATA(x1+32);
-		LCD_WR_DATA(x2+32);
+		LCD_WR_DATA(x1);
+		LCD_WR_DATA(x2);
 		LCD_WR_REG(0x2b);//行地址设置
 		LCD_WR_DATA(y1);
 		LCD_WR_DATA(y2);
@@ -201,11 +201,18 @@ void LCD_Init(void)
 	
 	LCD_WR_REG(0x36);   //屏幕扫描方式设置  模组驱动芯片为上参考
 	
+	//如果是ST7735R则使用这个
+#ifdef ST7735R
+	uint8_t data = 0B11110111;
+#else
+	uint8_t data = 0x00;
+#endif
+	
 	//LCD_WR_DATA8(0xEC);   //屏幕扫描方向 横向
-	if(USE_HORIZONTAL==0)LCD_WR_DATA8(0x08);      //              	   垂直方向从上到下 水平从左到右
-	else if(USE_HORIZONTAL==1)LCD_WR_DATA8(0xC8); //行列地址方式      	 垂直方向从上到下 水平从左到右
-	else if(USE_HORIZONTAL==2)LCD_WR_DATA8(0x78); //列地址方式 行列交换 垂直方向从下到上 水平从左到右
-	else LCD_WR_DATA8(0xA8);                      //行地址方式 行列交换 垂直方向从上到下 水平从左到右         
+	if(USE_HORIZONTAL==0)LCD_WR_DATA8(0x08&data);      //              	   垂直方向从上到下 水平从左到右
+	else if(USE_HORIZONTAL==1)LCD_WR_DATA8(0xC8&data); //行列地址方式      	 垂直方向从上到下 水平从左到右
+	else if(USE_HORIZONTAL==2)LCD_WR_DATA8(0x78&data); //列地址方式 行列交换 垂直方向从下到上 水平从左到右
+	else LCD_WR_DATA8(0xA8&data);                      //行地址方式 行列交换 垂直方向从上到下 水平从左到右         
 	//------------------------------------ST7735S Gamma Sequence-----------------------------------------//
 	LCD_WR_REG(0XE0);
 	LCD_WR_DATA8(0x12);
